@@ -12244,7 +12244,7 @@ namespace TopChartMvvm.Droid
 			public const int design_text_input_password_icon = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int DetatilLayout = 2131427370;
+			public const int detatil_layout = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
 			public const int include_loading = 2131427371;
@@ -12262,7 +12262,7 @@ namespace TopChartMvvm.Droid
 			public const int loadingprogress = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int Main = 2131427376;
+			public const int main_layout = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
 			public const int mtrl_layout_snackbar = 2131427377;

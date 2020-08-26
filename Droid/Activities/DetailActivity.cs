@@ -11,7 +11,7 @@ namespace TopChartMvvm.Droid.Activities
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.DetatilLayout);
+            SetContentView(Resource.Layout.detatil_layout);
         }
     }
 }
