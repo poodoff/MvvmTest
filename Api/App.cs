@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using Api.Repositories;
 using MvvmCross.IoC;
 
@@ -11,7 +12,16 @@ namespace Api
 
         public override void Initialize()
         {
+            MvvmCross.Mvx.IoCProvider.RegisterSingleton(InitHttpClient());
+
             MvvmCross.Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IChartRepository, ChartRepositoryImpl>();
+            MvvmCross.Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IArtistRepository, ArtistRepository>();
+        }
+
+        HttpClient InitHttpClient()
+        {
+            //TODO specific headers
+            return new HttpClient();
         }
     }
 }

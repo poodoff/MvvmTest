@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Api.Models.Artist;
 using Newtonsoft.Json;
 
 namespace Api.Models

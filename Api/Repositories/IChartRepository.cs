@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Api.Models;
+using Api.Models.Artist;
 
 namespace Api.Repositories
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Api.Models
+namespace Api.Models.Artist
 {
     public class SimpleArtistModel
     {
