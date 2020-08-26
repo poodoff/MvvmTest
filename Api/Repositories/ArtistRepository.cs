@@ -28,8 +28,8 @@ namespace Api.Repositories
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var model = Newtonsoft.Json.JsonConvert.DeserializeObject<ArtistModel>(content);
-                    return model;
+                    var model = Newtonsoft.Json.JsonConvert.DeserializeObject<ArtistResponseModel>(content);
+                    return model?.Artist;
                 }
             }
             catch (Exception ex)

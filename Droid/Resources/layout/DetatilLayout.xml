@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TopChartMvvm.GlideImageView
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/img"
+        android:layout_height="156dp"
+        android:layout_width="156dp"
+        app:MvxBind="ImageUrl MainImageUrl"/>
+
+
+    <TextView
+        tools:text="Name"
+        android:textStyle="bold"
+        android:id="@+id/name"
+        android:layout_below="@id/img"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text Name"/>
+
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:id="@+id/scrollView1"
+        android:layout_below="@id/name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            tools:text="content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Content"/>
+
+    </ScrollView>
+
+    <include layout="@layout/include_loading"/>
+</RelativeLayout>

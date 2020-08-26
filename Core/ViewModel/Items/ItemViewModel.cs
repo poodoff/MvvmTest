@@ -1,5 +1,6 @@
 ﻿using System;
 using Api.Models;
+using Api.Models.Artist;
 
 namespace Core.ViewModel.Items
 {
@@ -10,6 +11,8 @@ namespace Core.ViewModel.Items
         public SimpleArtistModel Artist { get; }
 
         public string Title => Artist?.Name ?? string.Empty;
+
+        public string Uid => Artist?.Id;
 
         public string ImgUrl { get; }
 

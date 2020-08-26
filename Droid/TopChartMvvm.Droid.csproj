@@ -188,6 +188,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="View\GlideImageView.cs" />
+    <Compile Include="Activities\DetailActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -220,6 +221,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\include_loading.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DetatilLayout.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
