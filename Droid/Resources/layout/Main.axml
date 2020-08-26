@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -12,4 +12,6 @@
         app:MvxItemTemplate="@layout/item_layout"
         app:MvxBind="ItemsSource Items; ItemClick ItemClickCommand" />
 
-</LinearLayout>
+    <include layout="@layout/include_loading"/>
+
+</RelativeLayout>

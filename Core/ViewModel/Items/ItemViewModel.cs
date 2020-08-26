@@ -1,13 +1,22 @@
 ﻿using System;
+using Api.Models;
+
 namespace Core.ViewModel.Items
 {
     public class ItemViewModel
     {
-        public string Title { get; set; }
+        protected const string SizeMedium = "medium";
 
-        public ItemViewModel(string title)
+        public SimpleArtistModel Artist { get; }
+
+        public string Title => Artist?.Name ?? string.Empty;
+
+        public string ImgUrl { get; }
+
+        public ItemViewModel(SimpleArtistModel simpleAritstModel)
         {
-            Title = title;
+            Artist = simpleAritstModel;
+            ImgUrl = simpleAritstModel?.Images?.Find(img => img.Size == SizeMedium).Url ?? string.Empty;
         }
     }
 }
