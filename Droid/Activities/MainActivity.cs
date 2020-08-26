@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.OS;
 
 namespace TopChartMvvm.Droid
@@ -12,6 +13,7 @@ namespace TopChartMvvm.Droid
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            UserDialogs.Init(this);
 
         }
     }
