@@ -67,7 +67,7 @@ namespace Core.ViewModel
         {
             if (viewModel == null || (string.IsNullOrEmpty(viewModel.Uid) && string.IsNullOrEmpty(viewModel.Title)))
             {
-                Acr.UserDialogs.UserDialogs.Instance.Alert("Информация не доступна");
+                Acr.UserDialogs.UserDialogs.Instance.Alert("Информация недоступна");
                 return;
             }
             _navigationService.Navigate<DetailViewModel, DetailNavArgs>(new DetailNavArgs(viewModel.Uid, viewModel.Title));
