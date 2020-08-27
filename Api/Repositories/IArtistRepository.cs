@@ -7,6 +7,6 @@ namespace Api.Repositories
 {
     public interface IArtistRepository
     {
-        Task<ArtistModel> GetInfo(string artistUid);
+        Task<ArtistModel> GetInfo(string artistUid, string artistName);
     }
 }

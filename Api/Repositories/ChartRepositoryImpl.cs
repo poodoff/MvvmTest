@@ -10,7 +10,7 @@ namespace Api.Repositories
 {
     public class ChartRepositoryImpl : IChartRepository
     {
-        protected const string MethodName = "chart.getTopArtists";
+        private const string MethodName = "chart.getTopArtists";
         private HttpClient _httpClient;
         private IMvxLog _logger;
 
@@ -20,7 +20,7 @@ namespace Api.Repositories
             _logger = logger;
         }
 
-        public async Task<IReadOnlyList<SimpleArtistModel>> GetTopAtists(int limit = 100)
+        public async Task<IReadOnlyList<SimpleArtistModel>> GetTopAtists(int limit)
         {
             try
             {
@@ -32,6 +32,8 @@ namespace Api.Repositories
                     var model = Newtonsoft.Json.JsonConvert.DeserializeObject<TopArtistsModel>(content);
                     return model?.Artists?.Artist ?? new List<SimpleArtistModel>();
                 }
+
+                //TODO обработка других значений StatusCode
             }
             catch (Exception ex)
             {

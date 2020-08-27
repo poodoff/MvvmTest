@@ -65,12 +65,12 @@ namespace Core.ViewModel
 
         private void OnItemClick(ItemViewModel viewModel)
         {
-            if(viewModel == null || string.IsNullOrEmpty(viewModel.Uid))
+            if (viewModel == null || (string.IsNullOrEmpty(viewModel.Uid) && string.IsNullOrEmpty(viewModel.Title)))
             {
                 Acr.UserDialogs.UserDialogs.Instance.Alert("Информация не доступна");
                 return;
             }
-            _navigationService.Navigate<DetailViewModel, DetailNavArgs>(new DetailNavArgs(viewModel.Uid));
+            _navigationService.Navigate<DetailViewModel, DetailNavArgs>(new DetailNavArgs(viewModel.Uid, viewModel.Title));
         }
     }
 }

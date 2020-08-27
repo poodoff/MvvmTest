@@ -8,6 +8,6 @@ namespace Api.Repositories
 {
     public interface IChartRepository
     {
-        Task<IReadOnlyList<SimpleArtistModel>> GetTopAtists(int limit = 100);
+        Task<IReadOnlyList<SimpleArtistModel>> GetTopAtists(int limit = 200);
     }
 }

@@ -14,6 +14,7 @@ namespace Core.ViewModel
         private IArtistRepository _artistRepository;
         private IMvxLog _logger;
         private string _artistUid;
+        private string _artistName;
 
         private bool _loading;
         public bool Loading
@@ -52,6 +53,7 @@ namespace Core.ViewModel
         public override void Prepare(DetailNavArgs parameter)
         {
             _artistUid = parameter.ArtistUid;
+            _artistName = parameter.ArtistName;
         }
 
         public override async Task Initialize()
@@ -59,7 +61,7 @@ namespace Core.ViewModel
             try
             {
                 Loading = true;
-                var artistInfo = await _artistRepository.GetInfo(_artistUid);
+                var artistInfo = await _artistRepository.GetInfo(_artistUid, _artistName);
                 if (artistInfo != null)
                 {
                     Content = artistInfo.Bio?.Content ?? EmptyContent;
