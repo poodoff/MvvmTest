@@ -64,7 +64,7 @@ namespace UnitTests
 
 
         [Test]
-        public void TestLoadArtistWithThrow()
+        public void TestLoadArtistWithException()
         {
             var emptyArtists = new List<SimpleArtistModel>();
             _mockRepository.Setup(repo => repo.GetTopAtists(It.IsAny<int>())).Throws(new Exception());
