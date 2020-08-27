@@ -19,6 +19,8 @@ namespace UnitTests
         [SetUp]
         public void Setup()
         {
+            Acr.UserDialogs.UserDialogs.Instance = new Moq.Mock<Acr.UserDialogs.IUserDialogs>().Object;
+
             _mockRepository = new Moq.Mock<IChartRepository>();
             var mockNavigationService = new Moq.Mock<MvvmCross.Navigation.IMvxNavigationService>();
             var mockLoger = new Moq.Mock<MvvmCross.Logging.IMvxLog>();
@@ -53,6 +55,19 @@ namespace UnitTests
         {
             var emptyArtists = new List<SimpleArtistModel>();
             _mockRepository.Setup(repo => repo.GetTopAtists(It.IsAny<int>())).ReturnsAsync(emptyArtists);
+
+            Assert.DoesNotThrowAsync(() => _mainViewModel.Initialize());
+            _mockRepository.Verify(repo => repo.GetTopAtists(It.IsAny<int>()), Times.Once);
+
+            Assert.AreEqual(_mainViewModel.Items?.Count, 0);
+        }
+
+
+        [Test]
+        public void TestLoadArtistWithThrow()
+        {
+            var emptyArtists = new List<SimpleArtistModel>();
+            _mockRepository.Setup(repo => repo.GetTopAtists(It.IsAny<int>())).Throws(new Exception());
 
             Assert.DoesNotThrowAsync(() => _mainViewModel.Initialize());
             _mockRepository.Verify(repo => repo.GetTopAtists(It.IsAny<int>()), Times.Once);

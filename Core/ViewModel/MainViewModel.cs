@@ -40,6 +40,7 @@ namespace Core.ViewModel
 
         public override async Task Initialize()
         {
+            Items = new MvxObservableCollection<ItemViewModel>();
             try
             {
                 Loading = true;
