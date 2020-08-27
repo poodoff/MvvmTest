@@ -70,10 +70,17 @@ namespace Core.ViewModel
                     if (largeImage != null)
                         MainImageUrl = largeImage.Url;
                 }
+                else
+                {
+                    Acr.UserDialogs.UserDialogs.Instance.Alert("Нет данных для отображения");
+                    Content = EmptyContent;
+                }
+
             }
             catch (Exception ex)
             {
                 _logger.WarnException("Fail load detail info: ", ex);
+                Acr.UserDialogs.UserDialogs.Instance.Alert("Проблемы при загрузке данных");
             }
             finally
             {

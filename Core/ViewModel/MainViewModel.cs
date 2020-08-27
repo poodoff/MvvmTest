@@ -49,10 +49,15 @@ namespace Core.ViewModel
                     var artistModels = topArtists.Select(artist => new ItemViewModel(artist)).ToList();
                     Items = new MvxObservableCollection<ItemViewModel>(artistModels);
                 }
+                else
+                {
+                    Acr.UserDialogs.UserDialogs.Instance.Alert("Нет данных для отображения");
+                }
             }
             catch (Exception ex)
             {
                 _logger.WarnException("Fail load artists: ", ex);
+                Acr.UserDialogs.UserDialogs.Instance.Alert("Проблемы при загрузке данных");
             }
             finally
             {
